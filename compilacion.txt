@@ -1,0 +1,3 @@
+ppu-g++ -I/opt/ps3dev/spu/include -I/opt/ps3dev/ppu/include -I/opt/ps3dev/ppu/include/rsx -I/opt/ps3dev/portlibs/ppu/include -O2 -c -o src/main.o src/main.cpp
+ppu-g++ -I/opt/ps3dev/spu/include -I/opt/ps3dev/ppu/include -I/opt/ps3dev/ppu/include/rsx -I/opt/ps3dev/portlibs/ppu/include -O2 -c -o src/graphics.o src/graphics.cpp
+Makefile:25: recipe for target 'src/graphics.o' failed

@@ -11,9 +11,9 @@
 #include <sysutil/sysutil.h>
 #include <rsx/rsx.h>
 #include <audio/audio.h>
-#include "graphics.h"
-#include "audio.h"
-#include "hand_cursor.h"
+#include "../include/graphics.h"
+#include "../include/audio.h"
+#include "../include/hand_cursor.h"
 
 #define SCREEN_WIDTH 1920
 #define SCREEN_HEIGHT 1080
@@ -23,6 +23,7 @@ void cleanup();
 void render();
 
 int main() {
+    printf("Inicio del Homebrew\n");
     init();
     while (1) {
         sysUtilCheckCallback();
@@ -34,6 +35,7 @@ int main() {
 
 void init() {
     initGraphics(SCREEN_WIDTH, SCREEN_HEIGHT);
+    printf("Gráficos inicializados\n");
     initAudio();
     playBackgroundMusic("/dev_hdd0/game/HOMEBREW/sound/menu.wav");
     loadHandCursorTexture();
@@ -41,13 +43,17 @@ void init() {
 
 void render() {
     startFrame();
+    printf("Inicio del Frame\n");
     drawBackground();
+    printf("Dibujando fondo\n");
     drawHandCursor();
     endFrame();
+    printf("Fin del Frame\n");
 }
 
 void cleanup() {
     stopBackgroundMusic();
     shutdownAudio();
     shutdownGraphics();
+    printf("Cerrando gráficos\n");
 }

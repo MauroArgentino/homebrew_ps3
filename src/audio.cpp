@@ -1,7 +1,7 @@
 
 // audio.cpp - Manejo de sonido
 
-#include "audio.h"
+#include "../include/audio.h"
 
 void initAudio() {
     // Código para inicializar el sistema de audio
